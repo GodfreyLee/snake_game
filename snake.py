@@ -22,6 +22,12 @@ class Snake:
         tim.goto(position)
         self.tims.append(tim)
 
+    def reset(self):
+        for num in self.tims:
+            num.goto(1000,1000)
+        self.tims.clear()
+        self.create_snake()
+        self.head = self.tims[0]
     def extend(self):
         self.add_segment(self.tims[-1].position())
 
